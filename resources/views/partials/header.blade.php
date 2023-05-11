@@ -2,7 +2,8 @@
 
     <div class="container d-flex">
         <div class="logo text-white">
-            Prova
+            <i class="fa-solid fa-train"></i>
+            OhTrain
         </div>
     
         <ul class="d-flex align-items-center list-unstyled m-0">
