@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Train;
 use Illuminate\Http\Request;
 
 class TrainController extends Controller
@@ -9,6 +10,7 @@ class TrainController extends Controller
     public function index()
     {
         $data = config('data');
-        return view('trains', compact('data'));
+        $trainsList = Train::all();
+        return view('trains', compact('data', 'trainsList'));
     }
 }

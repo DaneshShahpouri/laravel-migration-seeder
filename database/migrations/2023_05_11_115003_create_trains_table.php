@@ -15,16 +15,22 @@ return new class extends Migration
     {
         Schema::create('trains', function (Blueprint $table) {
 
-            $table->string('company');
-            $table->string('first_station');
-            $table->string('last_station');
-            $table->timestamps('departure_time');
-            $table->string('arrival_time');
             $table->id();
-            $table->integer('wagons_number');
-            $table->boolean('is_in_time');
-            $table->boolean('is_delete');
 
+            $table->string('company', 100);
+            $table->string('first_station', 120)->nullable();
+            $table->string('last_station', 120)->nullable();
+            $table->time('departure_time')->nullable();
+            $table->date('departure_date')->nullable();
+            $table->time('arrival_time')->nullable();
+            $table->date('arrival_date')->nullable();
+            $table->string('train_code', 8);
+            //Ho immaginato un codice univoco alfanumerico che identifica i treni
+            //A questo punto ne specifico la lunghezza (8), ma potrebbe essere più
+            //saggio lasciarla indefinita per modifiche future. (?) 
+            $table->tinyInteger('wagons_number')->nullable();
+            $table->boolean('is_in_time')->nullable();
+            $table->boolean('is_delete')->nullable();
 
             $table->timestamps();
         });

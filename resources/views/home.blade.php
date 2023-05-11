@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container my-2">
     CIAO SONO LA HOME
 
 </div>
