@@ -15,4 +15,13 @@ class TrainController extends Controller
         $trainsList = Train::all();
         return view('trains', compact('data', 'trainsList'));
     }
+
+    public function todayTrains()
+    {
+        $data = config('data');
+        $currentDate = Carbon::now();
+        //dd(substr($currentDate, 0, 10));
+        $trainsList = Train::all()->where('departure_date', null, substr($currentDate, 0, 10));
+        return view('trains', compact('data', 'trainsList'));
+    }
 }

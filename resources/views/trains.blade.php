@@ -4,6 +4,8 @@
 
 <div class="container my-2">
 
+    <a href="{{route('todayTrains')}}" class="btn btn-primary mx-auto my-5 w-50 d-block"> Visualizza Treni di Oggi</a>
+
     @foreach($trainsList as $singleTrain)
         
     <div class="card">
