@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('company', 100);
             $table->string('departure_station', 120)->nullable();
             $table->string('arrival_station', 120)->nullable();
-            $table->datetime('departure_time')->nullable();
-            $table->datetime('arrival_time')->nullable();
-            $table->string('train_code', 8)->unique();
+            $table->string('departure_time')->nullable();
+            $table->string('arrival_time')->nullable();
+            $table->string('train_code');
             //Ho immaginato un codice univoco alfanumerico che identifica i treni
             //A questo punto ne specifico la lunghezza (8), ma potrebbe essere più
             //saggio lasciarla indefinita per modifiche future. (?) 
