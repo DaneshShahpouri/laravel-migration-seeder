@@ -34,7 +34,7 @@ class TrainsSeeder extends Seeder
         //    forse potevo saltare il rigo del nome delle colonne cosi.
         //    Ragionandoci non ha molto senso, perchè credo che il for abbia uno scoope suo e quindi forse ho confuso le cose 
         //    dato che ora mi trovo con due variabili uguali, con lo stesso contenuto, su due ambienti diversi.
-        //Avevo sbagliato nello scrivere il nome della variabile... cosi funziona.
+        //Avevo sbagliato nello scrivere il nome della variabile... cosi funziona, ma non è molto diverso da un while.
 
 
         for ($trainCSV = fgetcsv($trainFile); $trainCSV != false; $trainCSV = fgetcsv($trainFile)) {
