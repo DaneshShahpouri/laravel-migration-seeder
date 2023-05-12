@@ -26,6 +26,13 @@ class TrainsSeeder extends Seeder
         $trainCSV = fgetcsv($trainFile);
         //dd($trainCSV);
 
+        //Questo ciclo è stata una prova per vedere due cose:
+        // 1. Cosa accade al ciclo for se ragioniamo oltre il semplice ciclo incrementale.
+        // 2. Ho pensato che dato che il ciclo for richiede di dichiarare una variabile
+        //    forse potevo saltare il rigo del nome delle colonne cosi.
+        //    Ragionandoci non ha molto senso, perchè credo che il for abbia uno scoope suo e quindi forse ho confuso le cose 
+        //    dato che ora mi trovo con due variabili uguali, con lo stesso contenuto, su due ambienti diversi.
+
         for ($tranCSV = fgetcsv($trainFile); $tranCSV != false; $tranCSV = fgetcsv($trainFile)) {
             $newTrain = new Train();
 
