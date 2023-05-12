@@ -21,10 +21,12 @@ class TrainsSeeder extends Seeder
     {
         $trainFile = fopen(__DIR__ . '/../trains.csv', 'r');
         //dd($trainFile);
-        // $trainCSV = fgetcsv($trainFile);
         $trainCSV = fgetcsv($trainFile);
-        $trainCSV = fgetcsv($trainFile);
+        //$trainCSV = fgetcsv($trainFile);
+        //$trainCSV = fgetcsv($trainFile);
         //dd($trainCSV);
+
+
 
         //Questo ciclo è stata una prova per vedere due cose:
         // 1. Cosa accade al ciclo for se ragioniamo oltre il semplice ciclo incrementale.
@@ -32,8 +34,10 @@ class TrainsSeeder extends Seeder
         //    forse potevo saltare il rigo del nome delle colonne cosi.
         //    Ragionandoci non ha molto senso, perchè credo che il for abbia uno scoope suo e quindi forse ho confuso le cose 
         //    dato che ora mi trovo con due variabili uguali, con lo stesso contenuto, su due ambienti diversi.
+        //Avevo sbagliato nello scrivere il nome della variabile... cosi funziona.
 
-        for ($tranCSV = fgetcsv($trainFile); $tranCSV != false; $tranCSV = fgetcsv($trainFile)) {
+
+        for ($trainCSV = fgetcsv($trainFile); $trainCSV != false; $trainCSV = fgetcsv($trainFile)) {
             $newTrain = new Train();
 
             $newTrain->company = $trainCSV[0];
@@ -47,6 +51,7 @@ class TrainsSeeder extends Seeder
             $newTrain->cancelled = $trainCSV[8];
 
             $newTrain->save();
+            //$trainCSV = fgetcsv($trainFile);
         };
 
         // for ($i = 0; $i < 1; $i++) {
