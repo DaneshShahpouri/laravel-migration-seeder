@@ -20,16 +20,14 @@ class TrainsSeeder extends Seeder
             $newTrain = new Train();
 
             $newTrain->company = $faker->company();
-            $newTrain->first_station = $faker->city();
-            $newTrain->last_station = $faker->city();
-            $newTrain->departure_time = $faker->time();
-            $newTrain->departure_date = $faker->date();
-            $newTrain->arrival_time = $faker->time();
-            $newTrain->arrival_date = $faker->date();
+            $newTrain->departure_station = $faker->city();
+            $newTrain->arrival_station = $faker->city();
+            $newTrain->departure_time = $faker->datetime();
+            $newTrain->arrival_time = $faker->datetime();
             $newTrain->train_code = $faker->numerify('trn-###');
             $newTrain->wagons_number = $faker->randomNumber(2, false);
-            $newTrain->is_in_time = $faker->boolean();
-            $newTrain->is_delete = $faker->boolean();
+            $newTrain->on_time = $faker->boolean();
+            $newTrain->cancelled = $faker->boolean();
 
             $newTrain->save();
         }
